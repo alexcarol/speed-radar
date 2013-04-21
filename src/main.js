@@ -4,10 +4,10 @@ var cocos = require('cocos2d'),
     geo = require('geometry');
 
 // Create a new layer
-var Speed-radar = cocos.nodes.Layer.extend({
+var SpeedRadar = cocos.nodes.Layer.extend({
     init: function() {
         // You must always call the super class version of init
-        Speed-radar.superclass.init.call(this);
+        SpeedRadar.superclass.init.call(this);
 
         // Get size of canvas
         var s = cocos.Director.get('sharedDirector').get('winSize');
@@ -36,7 +36,7 @@ exports.main = function() {
     var scene = cocos.nodes.Scene.create();
 
     // Add our layer to the scene
-    scene.addChild({child: Speed-radar.create()});
+    scene.addChild({child: SpeedRadar.create()});
 
     // Run the scene
     director.runWithScene(scene);
