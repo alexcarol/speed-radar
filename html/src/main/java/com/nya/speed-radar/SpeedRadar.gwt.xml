@@ -1,0 +1,11 @@
+<module rename-to='speed-radar'>
+  <inherits name='playn.PlayN'/>
+  <inherits name='SpeedRadarAssets'/>
+
+  <source path='core'/>
+  <source path='html'/>
+
+  <public path="resources" />
+
+  <entry-point class='com.nya.speed-radar.html.SpeedRadarHtml'/>
+</module>
