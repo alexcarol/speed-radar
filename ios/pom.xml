@@ -4,19 +4,19 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.nya.speed-radar</groupId>
-    <artifactId>speed-radar</artifactId>
+    <groupId>com.nya.speedradar</groupId>
+    <artifactId>speedradar</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>speed-radar-ios</artifactId>
+  <artifactId>speedradar-ios</artifactId>
   <packaging>dll</packaging>
   <name>SpeedRadar iOS</name>
 
   <dependencies>
     <dependency>
-      <groupId>com.nya.speed-radar</groupId>
-      <artifactId>speed-radar-core</artifactId>
+      <groupId>com.nya.speedradar</groupId>
+      <artifactId>speedradar-core</artifactId>
       <version>${project.version}</version>
     </dependency>
 
@@ -86,7 +86,7 @@
         <artifactId>monotouch-maven-plugin</artifactId>
         <version>1.0</version>
         <configuration>
-          <solution>speed-radar.sln</solution>
+          <solution>speedradar.sln</solution>
           <!-- uncomment this and configure path to use ios-sim -->
           <!-- <iossimPath>/usr/local/bin/ios-sim</iossimPath> -->
         </configuration>

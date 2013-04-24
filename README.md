@@ -1,2 +1,2 @@
-speed-radar
+speedradar
 ===========

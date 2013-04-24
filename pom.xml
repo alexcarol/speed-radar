@@ -7,8 +7,8 @@
     <version>1.7</version>
   </parent>
 
-  <groupId>com.nya.speed-radar</groupId>
-  <artifactId>speed-radar</artifactId>
+  <groupId>com.nya.speedradar</groupId>
+  <artifactId>speedradar</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>SpeedRadar Metaproject</name>

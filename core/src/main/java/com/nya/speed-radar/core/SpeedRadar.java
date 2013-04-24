@@ -1,4 +1,4 @@
-package com.nya.speed-radar.core;
+package com.nya.speedradar.core;
 
 import static playn.core.PlayN.*;
 

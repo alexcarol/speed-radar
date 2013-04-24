@@ -4,9 +4,9 @@ using MonoTouch.UIKit;
 
 using playn.ios;
 using playn.core;
-using com.nya.speed-radar.core;
+using com.nya.speedradar.core;
 
-namespace com.nya.speed-radar
+namespace com.nya.speedradar
 {
   [Register ("AppDelegate")]
   public partial class AppDelegate : IOSApplicationDelegate {

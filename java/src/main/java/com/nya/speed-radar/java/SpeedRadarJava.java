@@ -1,9 +1,9 @@
-package com.nya.speed-radar.java;
+package com.nya.speedradar.java;
 
 import playn.core.PlayN;
 import playn.java.JavaPlatform;
 
-import com.nya.speed-radar.core.SpeedRadar;
+import com.nya.speedradar.core.SpeedRadar;
 
 public class SpeedRadarJava {
 

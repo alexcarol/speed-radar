@@ -72,8 +72,8 @@
     <Reference Include="System.Core" />
     <Reference Include="monotouch" />
     <Reference Include="OpenTK-1.0" />
-    <Reference Include="speed-radar-ios">
-      <HintPath>bin\speed-radar-ios.dll</HintPath>
+    <Reference Include="speedradar-ios">
+      <HintPath>bin\speedradar-ios.dll</HintPath>
     </Reference>
     <Reference Include="IKVM.OpenJDK.Core">
       <HintPath>bin\IKVM.OpenJDK.Core.dll</HintPath>

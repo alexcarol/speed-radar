@@ -1,10 +1,10 @@
-package com.nya.speed-radar.html;
+package com.nya.speedradar.html;
 
 import playn.core.PlayN;
 import playn.html.HtmlGame;
 import playn.html.HtmlPlatform;
 
-import com.nya.speed-radar.core.SpeedRadar;
+import com.nya.speedradar.core.SpeedRadar;
 
 public class SpeedRadarHtml extends HtmlGame {
 
@@ -13,7 +13,7 @@ public class SpeedRadarHtml extends HtmlGame {
     HtmlPlatform.Config config = new HtmlPlatform.Config();
     // use config to customize the HTML platform, if needed
     HtmlPlatform platform = HtmlPlatform.register(config);
-    platform.assets().setPathPrefix("speed-radar/");
+    platform.assets().setPathPrefix("speedradar/");
     PlayN.run(new SpeedRadar());
   }
 }

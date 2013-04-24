@@ -4,39 +4,39 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.nya.speed-radar</groupId>
-    <artifactId>speed-radar</artifactId>
+    <groupId>com.nya.speedradar</groupId>
+    <artifactId>speedradar</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>speed-radar-html</artifactId>
+  <artifactId>speedradar-html</artifactId>
   <packaging>war</packaging>
   <name>SpeedRadar HTML</name>
 
   <properties>
-    <gwt.module>com.nya.speed-radar.SpeedRadar</gwt.module>
-    <gwt.name>speed-radar</gwt.name>
+    <gwt.module>com.nya.speedradar.SpeedRadar</gwt.module>
+    <gwt.name>speedradar</gwt.name>
     <!-- Desired Google App Engine SDK version -->
     <gae.version>1.6.1</gae.version>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>com.nya.speed-radar</groupId>
-      <artifactId>speed-radar-core</artifactId>
+      <groupId>com.nya.speedradar</groupId>
+      <artifactId>speedradar-core</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>com.nya.speed-radar</groupId>
-      <artifactId>speed-radar-core</artifactId>
+      <groupId>com.nya.speedradar</groupId>
+      <artifactId>speedradar-core</artifactId>
       <version>${project.version}</version>
       <classifier>sources</classifier>
     </dependency>
 
     <dependency>
-      <groupId>com.nya.speed-radar</groupId>
-      <artifactId>speed-radar-assets</artifactId>
+      <groupId>com.nya.speedradar</groupId>
+      <artifactId>speedradar-assets</artifactId>
       <version>${project.version}</version>
     </dependency>
 

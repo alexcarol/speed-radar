@@ -4,38 +4,38 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.nya.speed-radar</groupId>
-    <artifactId>speed-radar</artifactId>
+    <groupId>com.nya.speedradar</groupId>
+    <artifactId>speedradar</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>speed-radar-flash</artifactId>
+  <artifactId>speedradar-flash</artifactId>
   <packaging>war</packaging>
   <name>SpeedRadar Flash</name>
 
   <properties>
-    <gwt.module>com.nya.speed-radar.SpeedRadarFlash</gwt.module>
-    <gwt.name>speed-radarflash</gwt.name>
+    <gwt.module>com.nya.speedradar.SpeedRadarFlash</gwt.module>
+    <gwt.name>speedradarflash</gwt.name>
     <flexsdk.dir>${project.build.directory}/flex4sdk</flexsdk.dir>
   </properties>
 
   <dependencies>
     <dependency>
-      <groupId>com.nya.speed-radar</groupId>
-      <artifactId>speed-radar-core</artifactId>
+      <groupId>com.nya.speedradar</groupId>
+      <artifactId>speedradar-core</artifactId>
       <version>${project.version}</version>
     </dependency>
 
     <dependency>
-      <groupId>com.nya.speed-radar</groupId>
-      <artifactId>speed-radar-core</artifactId>
+      <groupId>com.nya.speedradar</groupId>
+      <artifactId>speedradar-core</artifactId>
       <version>${project.version}</version>
       <classifier>sources</classifier>
     </dependency>
 
     <dependency>
-      <groupId>com.nya.speed-radar</groupId>
-      <artifactId>speed-radar-assets</artifactId>
+      <groupId>com.nya.speedradar</groupId>
+      <artifactId>speedradar-assets</artifactId>
       <version>${project.version}</version>
     </dependency>
 
