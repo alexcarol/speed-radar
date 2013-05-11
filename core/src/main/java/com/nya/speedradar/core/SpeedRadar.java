@@ -7,7 +7,9 @@ import playn.core.*;
 import java.util.Queue;
 
 public class SpeedRadar extends Game.Default {
-
+    
+  private ImageLayer[] bgLayers;
+  private int h,w;
   private KeyboardListener keyboardListener = new KeyboardListener();
 
   public SpeedRadar() {
@@ -18,14 +20,20 @@ public class SpeedRadar extends Game.Default {
   public void init() {
     // create and add background image layer
 
-    float h = graphics().height();
-    float w = graphics().width();
+    h = graphics().height();
+    w = graphics().width();
 
     System.out.println("height : " + h + " width : " + w);
 
     Image bgImage = assets().getImage("images/road.png");
-    ImageLayer bgLayer = graphics().createImageLayer(bgImage);
-    bgLayer.setSize(w, h);
+    bgLayers = new ImageLayer[3];
+    for (int i = 0; i < 3; ++i) {
+        bgLayers[i] = graphics().createImageLayer(bgImage);
+        bgLayers[i].setHeight(h);
+        bgLayers[i].setWidth(w);
+        
+        bgLayers[i].setTranslation(0, (i-2)*h);
+    }
 
     Image carImage = assets().getImage("images/car.png");
     ImageLayer carLayer = graphics().createImageLayer(carImage);
@@ -39,7 +47,7 @@ public class SpeedRadar extends Game.Default {
     bichosLayer.add(carLayer);
 
 
-    graphics().rootLayer().add(bgLayer);
+    for (int i = 0; i < 3; ++i) graphics().rootLayer().add(bgLayers[i]);
     graphics().rootLayer().add(bichosLayer);
 
     keyboard().setListener(keyboardListener);
@@ -47,7 +55,19 @@ public class SpeedRadar extends Game.Default {
 
   @Override
   public void update(int delta) {
-
+      for (int i = 0; i < 3; ++i) {
+          bgLayers[i].setTy(bgLayers[i].ty()+ delta/10.0f);
+      }
+      
+      if (bgLayers[2].ty() > h) {
+          bgLayers[2].setTranslation(0, bgLayers[0].ty() - h);
+        
+          for (int i = 2; i > 0; --i) {
+              ImageLayer aux = bgLayers[i];
+              bgLayers[i] = bgLayers[i-1];
+              bgLayers[i-1] = aux;
+          }
+      }
   }
 
   @Override
