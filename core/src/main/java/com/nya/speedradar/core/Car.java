@@ -54,9 +54,9 @@ public class Car implements Keyboard.Listener, GameElement {
   public void onKeyUp(Keyboard.Event event) {
     Key key = event.key();
 
-    if (key == Key.LEFT) {
+    if (key == Key.LEFT && vx < 0) {
       vx = 0;
-    } else if (key == Key.RIGHT) {
+    } else if (key == Key.RIGHT && vx > 0) {
       vx = 0;
     }
   }
