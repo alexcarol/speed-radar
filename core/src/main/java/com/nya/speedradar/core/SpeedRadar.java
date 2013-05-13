@@ -11,7 +11,6 @@ public class SpeedRadar extends Game.Default {
     
   private ImageLayer[] bgLayers;
   private int h, w;
-  private KeyboardListener keyboardListener = new KeyboardListener();
 
   private ArrayList<GameElement> gameElements = new ArrayList<GameElement>();
 
@@ -48,12 +47,12 @@ public class SpeedRadar extends Game.Default {
     for (int i = 0; i < 3; ++i) graphics().rootLayer().add(bgLayers[i]);
     graphics().rootLayer().add(bichosLayer);
 
-    keyboard().setListener(keyboardListener);
     keyboard().setListener(car);
   }
 
   @Override
   public void update(int delta) {
+    //updating all game elements
     for (int i = 0; i < gameElements.size(); ++i) {
       gameElements.get(i).update(delta);
     }
