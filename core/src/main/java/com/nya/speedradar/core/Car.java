@@ -25,10 +25,10 @@ public class Car extends GameObject {
     super(layer);
     
     pixelsTravelled = 0;
-    minVelocity = 30.0f;
-    maxVelocity = 200.0f;
-    verticalAcceleration = 50.0f;
-    verticalDeceleration = 30.0f;
+    minVelocity = 80.0f;
+    maxVelocity = 800.0f;
+    verticalAcceleration = 20.0f;
+    verticalDeceleration = 5.0f;
     verticalVelocity = minVelocity;
     accelerating = false;
   }
