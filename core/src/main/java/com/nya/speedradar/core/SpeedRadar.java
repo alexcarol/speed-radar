@@ -38,7 +38,7 @@ public class SpeedRadar extends Game.Default {
         bgLayers[i].setTranslation(0, (i-2)*h);
     }
 
-    Car car = new Car("images/car.png", w, h);
+    Car car = CarFactory.createCar(1, w, h);
 
     GroupLayer bichosLayer = graphics().createGroupLayer();
     bichosLayer.add(car.getLayer());
