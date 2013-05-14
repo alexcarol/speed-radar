@@ -11,12 +11,11 @@ public class Car extends GameObject {
 
   private int vx = 0;
 
-public Car(ImageLayer layer) {
+  public Car(ImageLayer layer) {
     super(layer);
-}
+  }
 
-  public void update(int delta)
-  {
+  public void update(int delta) {
     imgLayer.setTx(imgLayer.tx() + vx);
   }
 

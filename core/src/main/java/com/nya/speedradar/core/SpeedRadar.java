@@ -1,14 +1,16 @@
 package com.nya.speedradar.core;
 
-import static playn.core.PlayN.*;
-
-import playn.core.*;
+import playn.core.Game;
+import playn.core.GroupLayer;
+import playn.core.Image;
+import playn.core.ImageLayer;
 
 import java.util.ArrayList;
-import java.util.Queue;
+
+import static playn.core.PlayN.*;
 
 public class SpeedRadar extends Game.Default {
-    
+
   private ImageLayer[] bgLayers;
   private int h, w;
   private KeyboardListener keyboardListener = new KeyboardListener();
@@ -31,11 +33,11 @@ public class SpeedRadar extends Game.Default {
     Image bgImage = assets().getImage("images/road.png");
     bgLayers = new ImageLayer[3];
     for (int i = 0; i < 3; ++i) {
-        bgLayers[i] = graphics().createImageLayer(bgImage);
-        bgLayers[i].setHeight(h);
-        bgLayers[i].setWidth(w);
-        
-        bgLayers[i].setTranslation(0, (i-2)*h);
+      bgLayers[i] = graphics().createImageLayer(bgImage);
+      bgLayers[i].setHeight(h);
+      bgLayers[i].setWidth(w);
+
+      bgLayers[i].setTranslation(0, (i - 2) * h);
     }
 
     Car car = CarFactory.createCar(1, w, h);
@@ -66,17 +68,17 @@ public class SpeedRadar extends Game.Default {
     }
 
     for (int i = 0; i < 3; ++i) {
-        bgLayers[i].setTy(bgLayers[i].ty()+ delta/10.0f);
+      bgLayers[i].setTy(bgLayers[i].ty() + delta / 10.0f);
     }
 
     if (bgLayers[2].ty() > h) {
-        bgLayers[2].setTranslation(0, bgLayers[0].ty() - h);
+      bgLayers[2].setTranslation(0, bgLayers[0].ty() - h);
 
-        for (int i = 2; i > 0; --i) {
-            ImageLayer aux = bgLayers[i];
-            bgLayers[i] = bgLayers[i-1];
-            bgLayers[i-1] = aux;
-        }
+      for (int i = 2; i > 0; --i) {
+        ImageLayer aux = bgLayers[i];
+        bgLayers[i] = bgLayers[i - 1];
+        bgLayers[i - 1] = aux;
+      }
     }
   }
 

@@ -1,19 +1,14 @@
 package com.nya.speedradar.core;
 
 
-import playn.core.Key;
 import playn.core.Keyboard;
 
 import java.util.ArrayList;
-import java.util.Queue;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
-class KeyboardListener implements Keyboard.Listener
-{
+class KeyboardListener implements Keyboard.Listener {
   private ArrayList<Keyboard.Listener> listeners = new ArrayList<Keyboard.Listener>();
 
-  public boolean add(Keyboard.Listener listener)
-  {
+  public boolean add(Keyboard.Listener listener) {
     return listeners.add(listener);
   }
 
