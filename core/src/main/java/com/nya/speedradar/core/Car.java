@@ -13,6 +13,7 @@ public class Car extends GameObject implements Keyboard.Listener {
   
   // Acceleration variables
   private long pixelsTravelled;
+  private long lastPixelsTravelled;
   private float verticalVelocity;
   private float minVelocity;
   private float maxVelocity;
@@ -24,7 +25,8 @@ public class Car extends GameObject implements Keyboard.Listener {
   public Car(ImageLayer layer) {
     super(layer);
     
-    pixelsTravelled = 0;
+    pixelsTravelled = -304;
+    lastPixelsTravelled = -304;
     minVelocity = 80.0f;
     maxVelocity = 800.0f;
     verticalAcceleration = 20.0f;
@@ -47,6 +49,7 @@ public class Car extends GameObject implements Keyboard.Listener {
         }
     }
     
+    lastPixelsTravelled = pixelsTravelled;
     pixelsTravelled += verticalVelocity*delta/1000.0f;
   }
   
@@ -62,6 +65,10 @@ public class Car extends GameObject implements Keyboard.Listener {
   
   public float getVerticalVelocity() {
       return verticalVelocity;
+  }
+  
+  public long getPixelsTravelledSinceLastUpdate() {
+      return pixelsTravelled - lastPixelsTravelled;
   }
 
   @Override
@@ -94,4 +101,5 @@ public class Car extends GameObject implements Keyboard.Listener {
         accelerating = false;
     }
   }
+  
 }

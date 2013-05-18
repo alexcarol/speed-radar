@@ -2,10 +2,9 @@ package com.nya.speedradar.core;
 
 import playn.core.Game;
 import playn.core.GroupLayer;
-import playn.core.Image;
-import playn.core.ImageLayer;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import static playn.core.PlayN.*;
 
@@ -17,6 +16,8 @@ public class SpeedRadar extends Game.Default {
   private ArrayList<GameElement> gameElements = new ArrayList<GameElement>();
   private Background background;
   private Car car;
+  private Iterator<Pole> poleIterator;
+  Pole nextPole;
 
   public SpeedRadar() {
     super(33); // call update every 33ms (30 times per second)
@@ -36,7 +37,7 @@ public class SpeedRadar extends Game.Default {
     GroupLayer bichosLayer = graphics().createGroupLayer();
     bichosLayer.add(car.getLayer());
     
-    background = new Background(w, h);
+    background = new Background(w, h, car);
     gameElements.add(background);
     gameElements.add(car);
     
@@ -45,19 +46,35 @@ public class SpeedRadar extends Game.Default {
     keyboardListener.add(car);
     keyboardListener.add(gameGUI);
     keyboard().setListener(keyboardListener);
+    
+    poleIterator = background.getRadarList().getPoleIterator();
+    nextPole = poleIterator.next();
   }
 
   @Override
   public void update(int delta) {
+      
     if (gameGUI.isPaused()) {
       return;
     }
-
-    background.setVelocity(car.getVerticalVelocity());
     
     //updating all game elements
     for (GameElement element : gameElements) {
       element.update(delta);
+    }
+    
+    // Check if car traversing pole
+     
+    while (-nextPole.positionY <= car.getPixelsTravelled()) {
+        if (nextPole.radar) {
+            System.out.println("HAY RADAR!! GAME OVR!");
+        }
+        
+        if (poleIterator.hasNext()) {
+            nextPole = poleIterator.next();
+        } else {
+            
+        }
     }
   }
 

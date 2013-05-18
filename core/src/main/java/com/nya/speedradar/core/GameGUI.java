@@ -27,4 +27,8 @@ public class GameGUI implements Keyboard.Listener {
   public boolean isPaused() {
     return paused;
   }
+
+    void setPaused(boolean b) {
+        paused = b;
+    }
 }
