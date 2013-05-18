@@ -19,21 +19,20 @@ public class Background implements GameElement {
   private GroupLayer polesLayer;
 
     public Background(int screenWidth, int screenHeight, Car myCar) {
-        w = screenWidth;
-        h = screenHeight;
-        car = myCar;
-        
-        bgImage = assets().getImage("images/road.png");
-        bgLayers = new ImageLayer[3];
-        for (int i = 0; i < 3; ++i) {
-            bgLayers[i] = graphics().createImageLayer(bgImage);
-            bgLayers[i].setHeight(h);
-            bgLayers[i].setWidth(w);
-            bgLayers[i].setTranslation(0, (i - 2) * h);
-            
-            graphics().rootLayer().add(bgLayers[i]);
+      w = screenWidth;
+      h = screenHeight;
+      car = myCar;
 
-        }
+      bgImage = assets().getImage("images/road.png");
+      bgLayers = new ImageLayer[3];
+      for (int i = 0; i < 3; ++i) {
+          bgLayers[i] = graphics().createImageLayer(bgImage);
+          bgLayers[i].setHeight(h);
+          bgLayers[i].setWidth(w);
+          bgLayers[i].setTranslation(0, (i - 2) * h);
+
+          graphics().rootLayer().add(bgLayers[i]);
+      }
 
       radarList = new RadarList(50000, 100, 30);
       polesLayer = graphics().createGroupLayer();
