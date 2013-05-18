@@ -5,7 +5,7 @@ import playn.core.Key;
 import playn.core.Keyboard;
 
 
-public class Car extends GameObject {
+public class Car extends GameObject implements Keyboard.Listener {
 
   private final int vxIncrement = 10;
 

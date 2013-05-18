@@ -5,12 +5,11 @@
 package com.nya.speedradar.core;
 
 import playn.core.ImageLayer;
-import playn.core.Keyboard;
 
 /**
  * @author moh
  */
-public abstract class GameObject implements Keyboard.Listener, GameElement {
+public abstract class GameObject implements GameElement {
   protected ImageLayer imgLayer;
 
   public GameObject(ImageLayer layer) {

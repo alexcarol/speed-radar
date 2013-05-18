@@ -56,11 +56,9 @@ public class SpeedRadar extends Game.Default {
     background.setVelocity(car.getVerticalVelocity());
     
     //updating all game elements
-    for (int i = 0; i < gameElements.size(); ++i) {
-      gameElements.get(i).update(delta);
+    for (GameElement element : gameElements) {
+      element.update(delta);
     }
-
-    
   }
 
   @Override

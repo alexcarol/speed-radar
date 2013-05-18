@@ -1,9 +1,11 @@
 package com.nya.speedradar.core;
 
+import playn.core.ImageLayer;
+
 import java.util.ArrayList;
 import java.util.Random;
 
-public class RadarList {
+public class RadarList implements GameElement{
 
   private ArrayList<Pole> poles;
   private int currentPole = 0;
@@ -16,7 +18,7 @@ public class RadarList {
 
     for (int i = 0; i < numPoles; ++i) {
       //if we wanted we could make pole random in each section
-      Pole p = new Pole(roadSectionLength/2 + roadSectionLength*i);
+      Pole p = new Pole(-(roadSectionLength/2 + roadSectionLength*i));
       poles.add(p);
     }
 
@@ -35,13 +37,26 @@ public class RadarList {
   {
     return poles;
   }
+
+
+  @Override
+  public void update(int delta) {
+    for (Pole p : poles) {
+      p.update(delta);
+    }
+  }
 }
 
-class Pole {
+class Pole implements GameElement {
   public long positionY;
   public boolean radar = false;
 
   public Pole(long pos) {
     positionY = pos;
+  }
+
+  @Override
+  public void update(int delta) {
+
   }
 }

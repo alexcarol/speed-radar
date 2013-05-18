@@ -1,6 +1,7 @@
 
 package com.nya.speedradar.core;
 
+import playn.core.GroupLayer;
 import playn.core.Image;
 import playn.core.ImageLayer;
 import static playn.core.PlayN.assets;
@@ -13,7 +14,10 @@ public class Background implements GameElement {
     private Image bgImage;
     
     private float velocity;
-    
+
+  private RadarList radarList;
+  private GroupLayer polesLayer;
+
     public Background(int screenWidth, int screenHeight) {
         w = screenWidth;
         h = screenHeight;
@@ -27,9 +31,22 @@ public class Background implements GameElement {
             bgLayers[i].setTranslation(0, (i - 2) * h);
             
             graphics().rootLayer().add(bgLayers[i]);
+
         }
         
         velocity = 30.0f;
+
+      radarList = new RadarList(10000, 100, 30);
+      polesLayer = graphics().createGroupLayer();
+      Image poleImg = assets().getImage("images/pole.png");
+      for (Pole p : radarList.getPoles()) {
+        ImageLayer imgLayer = graphics().createImageLayer(poleImg);
+        imgLayer.setTranslation(100, p.positionY);
+        imgLayer.setSize(screenWidth/2, screenHeight/8);
+        polesLayer.add(imgLayer);
+      }
+
+      graphics().rootLayer().add(polesLayer);
     }
     
     public void setVelocity(float vel) {
@@ -43,6 +60,7 @@ public class Background implements GameElement {
         for (int i = 0; i < 3; ++i) {
             bgLayers[i].setTy(bgLayers[i].ty() + velocity*secs);
         }
+        polesLayer.setTy(polesLayer.ty() + velocity*secs);
 
         if (bgLayers[2].ty() > h) {
             bgLayers[2].setTranslation(0, bgLayers[0].ty() - h);
