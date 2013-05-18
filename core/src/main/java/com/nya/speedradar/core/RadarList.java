@@ -27,7 +27,7 @@ public class RadarList {
   }
 
   public boolean isPolePassed() {
-    return
+    return false;
   }
 
   public ArrayList<Pole> getPoles()
