@@ -18,6 +18,7 @@ public class SpeedRadar extends Game.Default {
   private Car car;
   private Iterator<Pole> poleIterator;
   Pole nextPole;
+  private float maxVelocityAllowed = 200.0f;
 
   public SpeedRadar() {
     super(33); // call update every 33ms (30 times per second)
@@ -66,8 +67,11 @@ public class SpeedRadar extends Game.Default {
     // Check if car traversing pole
      
     while (-nextPole.positionY <= car.getPixelsTravelled()) {
+        System.out.println("Traversing Pole!  car vel = "+car.getVerticalVelocity());
         if (nextPole.radar) {
-            System.out.println("HAY RADAR!! GAME OVR!");
+            if (car.getVerticalVelocity() > maxVelocityAllowed) {
+                System.out.println("HAY RADAR!! GAME OVR!");
+            }
         }
         
         if (poleIterator.hasNext()) {
