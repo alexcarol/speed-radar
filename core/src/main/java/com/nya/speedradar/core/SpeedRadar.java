@@ -5,6 +5,7 @@ import playn.core.GroupLayer;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 import static playn.core.PlayN.*;
 
@@ -65,21 +66,23 @@ public class SpeedRadar extends Game.Default {
     }
     
     // Check if car traversing pole
-     
-    while (-nextPole.positionY <= car.getPixelsTravelled()) {
+
+    try {
+      while (-nextPole.positionY <= car.getPixelsTravelled()) {
         System.out.println("Traversing Pole!  car vel = "+car.getVerticalVelocity());
         if (nextPole.radar) {
             if (car.getVerticalVelocity() > maxVelocityAllowed) {
                 System.out.println("HAY RADAR!! GAME OVR!");
             }
         }
-        
-        if (poleIterator.hasNext()) {
-            nextPole = poleIterator.next();
-        } else {
-            
-        }
+
+        nextPole = poleIterator.next();
+      }
+    } catch (NoSuchElementException e) {
+      //race finished
+
     }
+
   }
 
   @Override
