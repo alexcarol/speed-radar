@@ -17,6 +17,7 @@ public class RadarList {
     for (int i = 0; i < numPoles; ++i) {
       //if we wanted we could make pole random in each section
       Pole p = new Pole(roadSectionLength/2 + roadSectionLength*i);
+      poles.add(p);
     }
 
     Random rand = new Random(System.currentTimeMillis());
